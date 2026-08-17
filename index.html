@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2B3455" />
+  <meta name="description" content="McMaster Design League — Our Mission standalone preview" />
+  <title>MDL — Our Mission</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="nav-wrap">
+      <div class="brand" aria-label="McMaster Design League">
+        <img src="assets/white-logo.png" alt="MDL" />
+      </div>
+      <nav class="desktop-nav" aria-label="Preview navigation">
+        <span>HOME</span>
+        <span>DESIGNATHON</span>
+        <span class="active">OUR MISSION</span>
+        <span>OUR TEAM</span>
+        <span>EVENTS</span>
+        <span>GALLERY</span>
+      </nav>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false">MENU</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <button type="button" data-go="who-we-are">01 — WHO WE ARE</button>
+      <button type="button" data-go="designathon">02 — THE CAD DESIGNATHON</button>
+      <button type="button" data-go="workshops">03 — WORKSHOPS</button>
+      <button type="button" data-go="community">04 — COMMUNITY</button>
+    </div>
+  </header>
+
+  <aside class="story-nav" aria-label="Mission sections">
+    <button type="button" class="active" data-go="who-we-are"><span>WHO WE ARE</span><b>01</b></button>
+    <button type="button" data-go="designathon"><span>THE CAD DESIGNATHON</span><b>02</b></button>
+    <button type="button" data-go="workshops"><span>WORKSHOPS</span><b>03</b></button>
+    <button type="button" data-go="community"><span>COMMUNITY</span><b>04</b></button>
+  </aside>
+
+  <main class="mission-page">
+    <section id="who-we-are" data-mission-section class="hero-section">
+      <div class="hero-copy">
+        <div data-reveal class="reveal eyebrow"><b>01</b><i></i><span>WHO WE ARE</span></div>
+        <h1 data-reveal class="reveal delay-1">We build a<br />community for <span>CAD.</span></h1>
+        <p data-reveal class="reveal delay-2">We're a student group focused on furthering CAD design and applied engineering skills — while making the process of learning, building, and meeting people feel a little less intimidating.</p>
+        <button data-reveal class="reveal delay-3 scroll-button" type="button" data-go="designathon">SCROLL THROUGH OUR STORY <b>↓</b></button>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <button type="button" data-reveal class="photo-card photo-pop" data-photo="hero" aria-label="Show photo caption">
+          <img src="assets/our-mission-image1.png" alt="MDL members hanging out on campus" />
+          <div class="photo-shade"></div>
+          <div class="photo-note">
+            <div><small>A LITTLE ABOUT US</small><strong>Students who like making things together.</strong></div>
+            <em>HELLO :)</em>
+          </div>
+        </button>
+        <div class="floating-tags" aria-hidden="true">
+          <span>STUDENT-RUN</span>
+          <span>BUILD TOGETHER</span>
+          <span>CAD + COMMUNITY</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="story-list">
+      <section id="designathon" data-mission-section class="story-section">
+        <div class="story-photo-wrap">
+          <button type="button" data-reveal class="photo-card photo-pop" data-photo="designathon" style="--entry-rotate:-2deg" aria-label="Show Designathon caption">
+            <img src="assets/events.png" alt="Students working together at an MDL design event" />
+            <div class="photo-shade"></div>
+            <div class="photo-note simple"><strong>Real challenges. Real teams. A lot of CAD.</strong><em>TAP / HOVER</em></div>
+          </button>
+          <span data-reveal class="reveal photo-stamp">02 / MDL</span>
+        </div>
+        <div class="story-copy">
+          <div data-reveal class="reveal eyebrow"><b>02</b><i></i><span>THE CAD DESIGNATHON</span></div>
+          <h2 data-reveal class="reveal delay-1">Canada's annual CAD Designathon.</h2>
+          <p data-reveal class="reveal delay-2">We're best known for Canada's one and only annual CAD Designathon, which brings students together to work on industry-sponsored design challenges. You get to tackle real problems in a competitive and collaborative setting — and build something you're proud of along the way.</p>
+          <div data-reveal class="reveal delay-3 tag-row"><span>DESIGN</span><span>TEAMWORK</span><span>BUILD</span></div>
+        </div>
+      </section>
+
+      <section id="workshops" data-mission-section class="story-section reverse">
+        <div class="story-photo-wrap">
+          <button type="button" data-reveal class="photo-card photo-pop" data-photo="workshops" style="--entry-rotate:2deg" aria-label="Show Workshops caption">
+            <img src="assets/events2.png" alt="Students building a project during an MDL workshop" />
+            <div class="photo-shade"></div>
+            <div class="photo-note simple"><strong>Hands-on &gt; just hearing about it.</strong><em>TAP / HOVER</em></div>
+          </button>
+          <span data-reveal class="reveal photo-stamp">03 / MDL</span>
+        </div>
+        <div class="story-copy">
+          <div data-reveal class="reveal eyebrow"><b>03</b><i></i><span>WORKSHOPS</span></div>
+          <h2 data-reveal class="reveal delay-1">Learn by actually making things.</h2>
+          <p data-reveal class="reveal delay-2">We run workshops to help people pick up practical tools like SolidWorks and other skills you don't always get in class. The goal is simple: make technical design feel more approachable, hands-on, and fun to learn.</p>
+          <div data-reveal class="reveal delay-3 tag-row"><span>SOLIDWORKS</span><span>CAD</span><span>HANDS-ON</span></div>
+        </div>
+      </section>
+
+      <section id="community" data-mission-section class="story-section">
+        <div class="story-photo-wrap">
+          <button type="button" data-reveal class="photo-card photo-pop" data-photo="community" style="--entry-rotate:-2deg" aria-label="Show Community caption">
+            <img src="assets/our-mission-image2.png" alt="MDL members celebrating together" />
+            <div class="photo-shade"></div>
+            <div class="photo-note simple"><strong>Come for CAD. Stay for the people.</strong><em>TAP / HOVER</em></div>
+          </button>
+          <span data-reveal class="reveal photo-stamp">04 / MDL</span>
+        </div>
+        <div class="story-copy">
+          <div data-reveal class="reveal eyebrow"><b>04</b><i></i><span>COMMUNITY</span></div>
+          <h2 data-reveal class="reveal delay-1">Design is better together.</h2>
+          <p data-reveal class="reveal delay-2">Beyond competitions and workshops, we're building a space where people can share personal projects, get feedback, and learn from each other by actually building things together. We hope to make your engineering experience a little better with us :)</p>
+          <div data-reveal class="reveal delay-3 tag-row"><span>SHARE</span><span>FEEDBACK</span><span>COMMUNITY</span></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="closing">
+      <p data-reveal class="reveal">THAT'S THE MISSION.</p>
+      <h2 data-reveal class="reveal delay-1">Design is better<br />together.</h2>
+      <span data-reveal class="reveal delay-2">Learn something. Make something. Meet someone who wants to build it with you.</span>
+    </section>
+  </main>
+
+  <footer><span>McMaster Design League</span><span>Standalone mission preview</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
