@@ -38,3 +38,12 @@ No npm install, React build, Tailwind build, or server is required for the previ
 - Responsive single-column mobile layout
 
 The top navbar is visual-only in this standalone preview because the other MDL pages are intentionally not included.
+
+
+Assignment alignment
+--------------------
+- Keeps the Mission page's alternating image/text row pattern.
+- Reuses our-mission-image1.png and our-mission-image2.png.
+- Tells the MDL story through: who we are, the CAD Designathon, workshops, and community.
+- Uses scroll entrance animation plus hover/tap image interaction and small photo blurbs.
+- Uses the original MDL footer content and links.

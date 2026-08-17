@@ -1,34 +1,14 @@
 (() => {
-  const $ = (selector, root = document) => root.querySelector(selector)
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector))
 
-  const menuButton = $('#menuButton')
-  const mobileMenu = $('#mobileMenu')
-
-  menuButton?.addEventListener('click', () => {
-    const open = mobileMenu.hasAttribute('hidden')
-    if (open) mobileMenu.removeAttribute('hidden')
-    else mobileMenu.setAttribute('hidden', '')
-    menuButton.textContent = open ? 'CLOSE' : 'MENU'
-    menuButton.setAttribute('aria-expanded', String(open))
-  })
-
-  const goToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    mobileMenu?.setAttribute('hidden', '')
-    if (menuButton) {
-      menuButton.textContent = 'MENU'
-      menuButton.setAttribute('aria-expanded', 'false')
-    }
-  }
-
-  $$('[data-go]').forEach((button) => {
-    button.addEventListener('click', () => goToSection(button.dataset.go))
+  $$('.scroll-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      document.getElementById(button.dataset.go)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
   })
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const revealItems = $$('[data-reveal]')
-  const sections = $$('[data-mission-section]')
 
   if (reduceMotion || !('IntersectionObserver' in window)) {
     revealItems.forEach((item) => item.classList.add('is-visible'))
@@ -42,15 +22,6 @@
       })
     }, { threshold: 0.14 })
     revealItems.forEach((item) => revealObserver.observe(item))
-  }
-
-  if ('IntersectionObserver' in window) {
-    const sectionObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-      if (!visible?.target.id) return
-      $$('.story-nav button').forEach((button) => button.classList.toggle('active', button.dataset.go === visible.target.id))
-    }, { rootMargin: '-28% 0px -48% 0px', threshold: [0.05, 0.2, 0.4, 0.7] })
-    sections.forEach((section) => sectionObserver.observe(section))
   }
 
   $$('.photo-card').forEach((card) => {
